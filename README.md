@@ -6,12 +6,13 @@ Your app should not have any models
 You should have only one view  
 The user should be able to submit a form and add a task  
 Getting started  
+Create a new rails app 
 
-		create a new rails app rails new todosession -TBd postgresql
+		rails new todosession -TBd postgresql
 
 In your Gemfile, add gem pry-rails, save and run bundle install.
 
-		generate a controller called todos with an index action
+	generate a controller called todos with an index action
 
 in your routes, add a root route to todos#index and add a delete and post route to 'todos'. Also replace your generated route with:
 
