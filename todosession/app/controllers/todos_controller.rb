@@ -12,14 +12,21 @@ class TodosController < ApplicationController
   	# end
   end
 
-  def destroy
+  def destroy_all
   	session[:todos] = []
   	redirect_to todos_path
   end
 
-  # private 
-   # def todo_params
-   #    params.require(:todo).permit(:title, :description)
-   # end
+  def destroy_one
+
+ 	session[:todos].delete(params[:task])
+ 	redirect_to todos_path
+
+  end
+
+  private 
+   def find_one
+      @todo = session[:todos].last
+   end
 
 end

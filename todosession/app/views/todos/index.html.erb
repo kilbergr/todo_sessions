@@ -1,6 +1,7 @@
 <h1>Todos</h1>
-<div><% @todos.each do |todo| %>
-	<%= todo %>
+<div><% @todos.each.with_index do |todo, index| %>
+	<%= todo %> <%= index %>
+	<%= link_to "Delete THIS Todo", todo_path(todo), method: :delete %>
 <%end %><br/>
 </div>	
 <div>
@@ -9,5 +10,5 @@
 	<%= label_tag(:task) %> <%= text_field_tag(:task, nil, autofocus: true) %>
 
 <%= submit_tag "Add"%> <% end %>
+	<%= link_to "Delete ALL Todos", todos_path, method: :delete %>
 </div>
-	<%= link_to "Delete Todos", todos_path, method: :delete %>
